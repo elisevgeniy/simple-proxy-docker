@@ -1,6 +1,7 @@
 # simple-proxy-docker
 
-A simple HTTP proxy server that can be run using Docker. This project is based on the [simple-proxy-docker](https://github.com/xyb/simple-proxy-docker).<\br>
+A simple HTTP proxy server that can be run using Docker. This project is based on the [simple-proxy-docker](https://github.com/xyb/simple-proxy-docker).
+
 Add run options and compose file.
 
 [![GitHub License](https://img.shields.io/github/license/elisevgeniy/simple-proxy-docker)](https://github.com/elisevgeniy/simple-proxy-docker)
@@ -9,9 +10,13 @@ Add run options and compose file.
 
 1. Download repository
 
-2. Change `docker-compose.yaml`
+2. Change `docker-compose.yaml`, add run option string to OPT env like:
+   ```
+   environment:
+      - OPT=-basic-auth=user:pass -log-headers
+   ``` 
 
-3. Run the Docker container:
+4. Run the Docker container:
 
    ```sh
    docker compose up --build
@@ -19,7 +24,7 @@ Add run options and compose file.
 
    This command will start the proxy server and map port 8888 from the container to port 8888 on your host machine.
 
-4. (Optional) To run the container in the background, use the `-d` flag:
+5. (Optional) To run the container in the background, use the `-d` flag:
 
    ```sh
    docker compose up -d --build
