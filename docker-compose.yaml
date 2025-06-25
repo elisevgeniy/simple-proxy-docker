@@ -1,0 +1,8 @@
+services:
+  proxy:
+    build:
+      context: .
+    ports:
+      - 8888:8888
+    environment:
+      - OPT=-basic-auth=user:pass
